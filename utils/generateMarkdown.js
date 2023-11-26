@@ -11,11 +11,11 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch (license) {
     case "Apache":
-      return `[Apache License](https://www.apache.org/licenses/LICENSE-2.0.html)`;
+      return `[Apache License](https://www.apache.org/licenses/LICENSE-2.0)`;
     case "GPL":
       return `[GPL License](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
     case "MIT":
-      return `[MIT License](https://mit-license.org/)`;
+      return `[MIT License](https://opensource.org/licenses/MIT)`;
     case "BSD2":
       return `[BSD2](https://choosealicense.com/licenses/bsd-2-clause/)`;
     case "BSD3":
