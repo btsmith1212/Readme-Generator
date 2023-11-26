@@ -6,37 +6,19 @@ function renderLicenseBadge(license) {
   }
   return "";
 }
-// Created a function that returns the license link
-// If there is no license, return an empty string
+
 function renderLicenseLink(license) {
   switch (license) {
-    case "Apache":
-      return `[Apache License](https://www.apache.org/licenses/LICENSE-2.0)`;
-    case "GPL":
-      return `[GPL License](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
     case "MIT":
       return `[MIT License](https://opensource.org/licenses/MIT)`;
-    case "BSD2":
-      return `[BSD2](https://choosealicense.com/licenses/bsd-2-clause/)`;
-    case "BSD3":
-      return `[BSD3 License](https://opensource.org/licenses/BSD-3-Clause)`;
-    case "Boost":
-      return `[Boost License](https://www.boost.org/LICENSE_1_0.txt)`;
-    case "CCommons":
-      return;
-      `[CCommons License](https://creativecommons.org/publicdomain/zero/1.0/legalcode)`;
-    case "Eclipse":
-      return `[Eclipse License](https://www.eclipse.org/legal/epl-2.0/)`;
-    case "GPL3":
-      return `[GPL3 License](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
-    case "GPL2":
-      return `[GPL2 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`;
-    case "GLPL":
-      return `[GLPL License](https://www.gnu.org/licenses/lgpl-3.0.en.html)`;
-    case "Mozilla":
-      return `[Mozilla License](https://www.mozilla.org/en-US/MPL/2.0/)`;
-    case "Unlicense":
-      return `[Unlicense License](https://choosealicense.com/licenses/unlicense/)`;
+    case "Apache":
+      return `[Apache License](https://www.apache.org/licenses/LICENSE-2.0)`;
+    case "Artistic":
+      return `[Artistic License](https://opensource.org/licenses/Artistic-2.0)`;
+    case "BSD":
+      return `[BSD License](https://opensource.org/license/bsd-3-clause/)`;
+    case "GPL":
+      return `[GPL License](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
     default:
       return "";
   }
