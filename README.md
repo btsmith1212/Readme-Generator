@@ -1,6 +1,6 @@
 # b
 
-[![License](https://img.shields.io/badge/license-MIT License-blue.svg)]
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 ## Description
 
