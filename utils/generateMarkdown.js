@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license) {
-    return `![License](https://img.shields.io/badge/license-${license}-blue.svg)`;
+    return `[![License](https://img.shields.io/badge/license-${license}-blue.svg)]`;
   }
   return "";
 }
@@ -11,32 +11,32 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch (license) {
     case "Apache":
-      return `[Apache](https://www.apache.org/licenses/LICENSE-2.0.html)`;
+      return `[Apache License](https://www.apache.org/licenses/LICENSE-2.0.html)`;
     case "GPL":
-      return `[GPL](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
+      return `[GPL License](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
     case "MIT":
-      return `[MIT](https://mit-license.org/)`;
+      return `[MIT License](https://mit-license.org/)`;
     case "BSD2":
       return `[BSD2](https://choosealicense.com/licenses/bsd-2-clause/)`;
     case "BSD3":
-      return `[BSD3](https://opensource.org/licenses/BSD-3-Clause)`;
+      return `[BSD3 License](https://opensource.org/licenses/BSD-3-Clause)`;
     case "Boost":
-      return `[Boost](https://www.boost.org/LICENSE_1_0.txt)`;
+      return `[Boost License](https://www.boost.org/LICENSE_1_0.txt)`;
     case "CCommons":
       return;
-      `[CCommons](https://creativecommons.org/publicdomain/zero/1.0/legalcode)`;
+      `[CCommons License](https://creativecommons.org/publicdomain/zero/1.0/legalcode)`;
     case "Eclipse":
-      return `[Eclipse](https://www.eclipse.org/legal/epl-2.0/)`;
+      return `[Eclipse License](https://www.eclipse.org/legal/epl-2.0/)`;
     case "GPL3":
-      return `[GPL3](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
+      return `[GPL3 License](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
     case "GPL2":
-      return `[GPL2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`;
+      return `[GPL2 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`;
     case "GLPL":
-      return `[GLPL](https://www.gnu.org/licenses/lgpl-3.0.en.html)`;
+      return `[GLPL License](https://www.gnu.org/licenses/lgpl-3.0.en.html)`;
     case "Mozilla":
-      return `[Mozilla](https://www.mozilla.org/en-US/MPL/2.0/)`;
+      return `[Mozilla License](https://www.mozilla.org/en-US/MPL/2.0/)`;
     case "Unlicense":
-      return `[Unlicense](https://choosealicense.com/licenses/unlicense/)`;
+      return `[Unlicense License](https://choosealicense.com/licenses/unlicense/)`;
     default:
       return "";
   }
