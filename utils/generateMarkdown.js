@@ -1,4 +1,3 @@
-const fs = require("fs");
 // Created a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -41,7 +40,6 @@ function renderLicenseLink(license) {
     default:
       return "";
   }
-  return licenseLink;
 }
 
 // Created a function that returns the license section of README
@@ -59,6 +57,8 @@ function generateMarkdown(data) {
 
   ${renderLicenseBadge(data.license)}
 
+  ## Description
+  ${data.description}
   ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
@@ -74,6 +74,7 @@ function generateMarkdown(data) {
   ${data.installation}
   ## Usage
   ${data.usage}
+  ## License
   ${renderLicenseSection(data.license)}
   ## Contributing
   ${data.contributing}
