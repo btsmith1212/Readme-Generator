@@ -74,34 +74,22 @@ const questions = [
 ];
 
 // Created a function to write README file
-const writeFile = (data) => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile("README.md", data, (err) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve({
-        ok: true,
-        message: console.log("README generated!"),
-      });
-    });
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("README.md file generated successfully!");
+    }
   });
-};
-
-// Created a function to initialize app
-const init = () => {
-  return inquirer.prompt(questions);
-};
+}
 
 // Function call to initialize app
-init()
-  .then((userInput) => {
-    return generateMarkdown(userInput);
-  })
-  .then((readmeInfo) => {
-    return writeFile(readmeInfo);
-  })
-  .catch((err) => {
-    console.log(err);
+function init() {
+  inquirer.prompt(questions).then((response) => {
+    console.log(response);
+    const markdownContent = generateMarkdown(response);
+    writeToFile("README.md", markdownContent);
   });
+}
+init();
