@@ -1,16 +1,18 @@
-
+const fs = require("fs");
+// Created a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  let badge = "";
-
-  if(license != "None") {
-    badge = "![License Badge](https://shields.io/badge/license-" + license + "-green)";
+  if (!license) {
+    return "";
+  } else {
+    return `[![${license} license](https://img.shields.io/badge/License-${license}-blue.svg)](${renderLicenseLink(
+      license
+    )})`;
   }
-
   return badge;
 }
-// Created a function that returns a license badge based on which license is passed in
-// If there is no license, returns an empty string
-
+// Created a function that returns the license link
+// If there is no license, return an empty string
 function renderLicenseLink(license) {
   let licenseLink;
 
@@ -34,7 +36,8 @@ function renderLicenseLink(license) {
       licenseLink = "https://www.boost.org/LICENSE_1_0.txt";
       break;
     case "CCommons":
-      licenseLink = "https://creativecommons.org/publicdomain/zero/1.0/legalcode";
+      licenseLink =
+        "https://creativecommons.org/publicdomain/zero/1.0/legalcode";
       break;
     case "Eclipse":
       licenseLink = "https://www.eclipse.org/legal/epl-2.0/";
@@ -58,63 +61,76 @@ function renderLicenseLink(license) {
       licenseLink = "";
       break;
   }
-  
   return licenseLink;
 }
 
-
+// Created a function that returns the license section of README
+// If there is no license, return an empty string
 function renderLicenseSection(license) {
   let licenseSection = "";
-
   if (license != "None") {
-    licenseSection += "## License\n"
-    licenseSection += "Please see " + renderLicenseLink(license) + " to get detailed information for this license\n";
+    licenseSection += "## License\n";
+    licenseSection +=
+      "Please see " +
+      renderLicenseLink(license) +
+      " to get detailed information for this license\n";
   }
-
   return licenseSect;
 }
-//Created a function that returns the license section of README
-//If there is no license, returns an empty string
 
-function generateMarkdown(data) {
-  const sections = ["title", "description", "installation", "usage", "contributing", "tests", "license"];
-
-  let markdown = "# " + data.title + "\n";
-
-  markdown += renderLicenseBadge(data.license) + "\n";
-
-  markdown += "## Table of Contents\n";
-  for (let i=0; i<sections.length; i++) {
-    if (! (sections[i] === "license" && data.license === "None")) {
-      markdown += i+1 + ". [" + sections[i] + "](#" + sections[i][0].toLowerCase() + sections[i].substring(1) + ")\n";
-    }
+function renderLicenseLink(license) {
+  if (license === "MIT") {
+    return `https://lbesson.mit-license.org/`;
   }
-  markdown += "\n";
-
-  markdown += "## " + sections[0] + "\n";
-  markdown += data.title + "\n";
-
-  markdown += "## " + sections[1] + "\n";
-  markdown += data.description + "\n";
-
-  markdown += "## " + sections[2] + "\n";
-  markdown += data.installation + "\n";
-
-  markdown += "## " + sections[3] + "\n";
-  markdown += data.usage + "\n";
-
-  markdown += "## " + sections[4] + "\n";
-  markdown += data.contributing + "\n";
-
-  markdown += "## " + sections[5] + "\n";
-  markdown += data.tests + "\n";
-
-
-  markdown += renderLicenseSection(data.license) + "\n";
-
-  return markdown;
+  if (license === "GPL") {
+    return `http://perso.crans.org/besson/LICENSE.html`;
+  }
+  if (license === "CC--0") {
+    return `https://creativecommons.org/licenses/by-nd/4.0`;
+  }
 }
-//Created a function to generate markdown for README
+
+function renderLicenseSection(license) {
+  if (!license) {
+    return ``;
+  } else {
+    return `## Licenses
+    This project is covered under the ${license} license. To learn more about what this means, click the license button at the top.`;
+  }
+}
+// Created a function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.title}
+
+  ${renderLicenseBadge(data.licenses)}
+
+  ## Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Licenses](#licenses)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  * [Credits](#credits)
+  ## Description
+  ${data.description}
+  ## Installation
+  ${data.installation}
+  ## Usage
+  ${data.usage}
+  ${renderLicenseSection(data.licenses)}
+  ## Contributing
+  ${data.contributing}
+  ## Tests
+  ${data.tests}
+  ## Questions
+  Have questions about this project?  
+  GitHub: https://github.com/${data.github}  
+  Email: ${data.email}
+  ## Credits
+  ${data.credits}
+`;
+}
 
 module.exports = generateMarkdown;
-//Exported markdown
