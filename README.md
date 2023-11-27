@@ -1,6 +1,6 @@
 # b
 
-  ![License](https://img.shields.io/badge/license-MIT License-blue.svg)
+  ![Github License](https://img.shields.io/badge/license-MIT License-yellowgreen.svg)
 
   ## Description
   b
