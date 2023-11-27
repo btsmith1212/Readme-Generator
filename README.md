@@ -1,6 +1,6 @@
 # b
 
-  ![Github License](https://img.shields.io/badge/license-MIT-License-yellowgreen.svg)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
   b
@@ -20,7 +20,7 @@
   ## Usage
   b
   ## License
-  This project is licensed under the MIT-License license.
+  This project is licensed under the MIT license.
   ## Contributing
   b
   ## Tests

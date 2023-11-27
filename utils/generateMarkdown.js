@@ -1,24 +1,26 @@
 // Created a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license !== "None") {
-    return `![Github License](https://img.shields.io/badge/license-${license}-yellowgreen.svg)`;
+  if (license) {
+    return `![License](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }
   return "";
 }
 
-function renderLicenseLink(license) {
+function renderLicenseBadge(license) {
   switch (license) {
     case "MIT":
-      return `[MIT License](https://opensource.org/licenses/MIT)`;
+      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+    case "ISC":
+      return "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
     case "Apache":
-      return `[Apache License](https://www.apache.org/licenses/LICENSE-2.0)`;
-    case "Artistic":
-      return `[Artistic License](https://opensource.org/licenses/Artistic-2.0)`;
-    case "BSD":
-      return `[BSD License](https://opensource.org/license/bsd-3-clause/)`;
+      return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     case "GPL":
-      return `[GPL License](https://www.gnu.org/licenses/gpl-3.0.en.html)`;
+      return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+    case "BSD":
+      return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+    case "None":
+      return "";
     default:
       return "";
   }
