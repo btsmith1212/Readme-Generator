@@ -1,9 +1,9 @@
-# b
+# Professional README Generator
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  b
+  This project utilizes inquirer and node.js to generate a readme based on user prompts.
   ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
@@ -14,20 +14,20 @@
   * [Questions](#questions)
   * [Credits](#credits)
   ## Description
-  b
+  This project utilizes inquirer and node.js to generate a readme based on user prompts.
   ## Installation
-  b
+  Run npm i to install packages, run node.js for questions.
   ## Usage
-  b
+  This project is designed to streamline the readme creation process.
   ## License
   This project is licensed under the MIT license.
   ## Contributing
-  b
+  n/a
   ## Tests
-  b
+  n/a
   ## Questions
   Have questions about this project?  
-  GitHub: https://github.com/b  
-  Email: b
+  GitHub: https://github.com/btsmith1212  
+  Email: btsmith1212@gmail.com
   ## Credits
-  b
+  n/a
